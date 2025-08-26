@@ -5,7 +5,7 @@ import 'react-phone-number-input/style.css';
 
 function PhoneNumberInput() {
   const [phoneNumber, setPhoneNumber] = useState("");
-  //const [valid, setValid] = useState(true);
+  const [valid, setValid] = useState(true);
 
   const allowedCountries = [
     "GB", "DE", "FR", "ES", "IT", "NL", "PL", "SE",
@@ -16,10 +16,10 @@ function PhoneNumberInput() {
 
   const handleChange = (value) => {
    setPhoneNumber(value)
-   // setValid(value ? isValidPhoneNumber(value) : false)
+   setValid(value ? isValidPhoneNumber(value) : false)
   };
   return (
-    <div>
+    <div className="relative w-full mb-3">
       <PhoneInput
         placeholder="Phone Number"
         countries={allowedCountries}
@@ -29,14 +29,12 @@ function PhoneNumberInput() {
         international
         inputProps={{
           required: true,
-          maxLength: 20,
-          minLength: 12
         }}
-        className="border border-gray-300 p-2 rounded-md w-full mb-4 hover:bg-gray-100"
+        className={"border border-gray-300 p-3 rounded-md text-xl w-full mb-5 hover:bg-gray-100" + (valid ? " border-gray-300" : " border-red-500")}
       />
-      {/* {!valid && (
-        <span className="text-red-500">Invalid phone number</span>
-      )} */}
+      {!valid && (
+        <span className="absolute top-full left-0 mt-1 z-20 bg-red-400 text-white text-sm px-3 py-1 rounded-md shadow-lg">Invalid phone number</span>
+      )}
     </div>
   );
 }
