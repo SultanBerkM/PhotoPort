@@ -7,7 +7,9 @@ function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex items-center justify-center p-4">
       <div className="flex min-h-full">
-        <LoginPageCard />
+        <div className="hidden lg:block">
+          <LoginPageCard />
+        </div>
         <div className="rounded-r-lg bg-white max-w-full w-96 flex flex-col p-8 shadow-lg justify-center">
           <div className="flex gap-1 justify-center">
             <CameraIcon />

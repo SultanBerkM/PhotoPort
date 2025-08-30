@@ -1,7 +1,7 @@
 function CameraIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" 
-         viewBox="0 0 24 21" 
+         viewBox="0 0 24 18" 
          fill="currentColor" 
          className="w-6 h-6 text-blue-300">
       <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
