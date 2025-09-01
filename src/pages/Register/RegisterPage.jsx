@@ -4,6 +4,7 @@ import PhoneNumberInput from "../../components/AuthInputs/PhoneNumberInput";
 import RegisterPageCard from "./RegisterPageCard";
 import EmailInput from "../../components/AuthInputs/EmailInput";
 import NameInput from "../../components/AuthInputs/NameInput";
+import AuthBtn from "../../components/Buttons/AuthBtn";
 import { Link } from "react-router-dom";
 
 function RegisterPage(){
@@ -38,7 +39,7 @@ function RegisterPage(){
                             <option value="guest">Guest</option>
                         </select>
 
-                        <button className="bg-blue-500 text-white rounded-lg w-full p-3 cursor-pointer hover:bg-blue-600 text-xl">Register</button>
+                        <AuthBtn btnName="Register" />
                         <p className="text-gray-600 text-xl mt-3 text-center">By registering you agree with our <a href="#" className="text-blue-500 hover:underline">Terms & Conditions</a></p>
                         <p className="text-gray-700 text-xl mt-4 text-center">Already have an account?</p>
                         <p className="text-blue-500 text-center text-xl"><a href="/login" className="cursor-pointer hover:underline">Login</a></p>

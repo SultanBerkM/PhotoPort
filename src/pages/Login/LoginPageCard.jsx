@@ -3,7 +3,7 @@ function LoginPageCard() {
     <div className="h-full flex items-center justify-center">
       <div className="relative">
         <img
-          src="/photoLog.jpg"
+          src="./authJpgs/photoLog.jpg"
           alt="Register"
           className="h-[600px] w-max object-cover rounded-l-lg rounded-r-none shadow-lg"
         />

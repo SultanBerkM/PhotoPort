@@ -2,7 +2,7 @@ import CameraIcon from "../../components/CameraIcon";
 import EmailInput from "../../components/AuthInputs/EmailInput";
 import PasswordInput from "../../components/AuthInputs/PasswordInput";
 import LoginPageCard from "./LoginPageCard";
-
+import AuthBtn from "../../components/Buttons/AuthBtn";
 function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex items-center justify-center p-4">
@@ -22,9 +22,7 @@ function LoginPage() {
             <EmailInput />
             <PasswordInput />
           </div>
-          <button className="bg-blue-500 text-white rounded-lg w-full p-3 cursor-pointer hover:bg-blue-600 text-xl">
-            Log In
-          </button>
+          <AuthBtn btnName="Login" />
           <p className="text-gray-700 text-xl mt-4 text-center">
             Don't have an account?
           </p>

@@ -4,7 +4,7 @@ function RegisterPageCard() {
     <div className="h-full flex items-center justify-center">
       <div className="relative">
         <img
-          src="/photoLogin.jpg"   
+          src="./authJpgs/photoLogin.jpg"   
           alt="Register"
           className="h-[720px] w-max object-cover rounded-l-lg rounded-r-none shadow-lg"
 
