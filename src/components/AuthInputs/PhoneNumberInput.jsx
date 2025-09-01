@@ -16,7 +16,10 @@ function PhoneNumberInput() {
 
   const handleChange = (value) => {
    setPhoneNumber(value)
-   setValid(value ? isValidPhoneNumber(value) : false)
+   
+  };
+  const handleBlur = () => {
+    setValid(phoneNumber ? isValidPhoneNumber(phoneNumber) : false);
   };
   return (
     <div className="relative w-full mb-3">
@@ -26,6 +29,7 @@ function PhoneNumberInput() {
         defaultCountry="BG"
         value={phoneNumber}
         onChange={handleChange}
+        onBlur={handleBlur}
         international
         inputProps={{
           required: true,

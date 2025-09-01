@@ -6,9 +6,10 @@ function EmailInput(){
 
     const handleChange = (e) => {
         setEmail(e.target.value);
-        setValid(validateEmail(e.target.value));
     }
-    
+    const handleBlur = () => {
+        setValid(validateEmail(email));
+    }
     const validateEmail = (value) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(value);
@@ -20,6 +21,7 @@ function EmailInput(){
             type="email"
             value={email}
             onChange={handleChange}
+            onBlur={handleBlur}
             placeholder="Email"
             required
             title="Please enter a valid email address."

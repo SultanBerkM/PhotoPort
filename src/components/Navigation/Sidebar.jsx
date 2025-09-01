@@ -1,4 +1,4 @@
-import CameraIcon  from "../../CameraIcon";
+import CameraIcon  from "../CameraIcon";
 function Sidebar(){
     return (
         <nav className="bg-gray-800 p-4 text-white flex flex-col items-start justify-between h-screen w-60">

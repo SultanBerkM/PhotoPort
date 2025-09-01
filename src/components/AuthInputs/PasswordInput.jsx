@@ -4,10 +4,13 @@ function PasswordInput(){
     const [error, setError] = useState("");
 
     const handleChange = (e) => {
-    setPassword(e.target.value);
-    setError(validatePassword(e.target.value));
-  };
+      setPassword(e.target.value);
+    }
 
+    const handleBlur = () => {
+      setError(validatePassword(password));
+    }
+  
     const validatePassword = (value) => {
         if(value == "") { return ""; }
         if(value.length < 8) { return "Password must be at least 8 characters"}
@@ -22,6 +25,7 @@ function PasswordInput(){
         type="password"
         value={password}
         onChange={handleChange}
+        onBlur={handleBlur}
         placeholder="Password"
         className={`border p-3 rounded-md w-full text-xl hover:bg-gray-100 ${
           error ? "border-red-500" : "border-gray-300"
@@ -37,5 +41,4 @@ function PasswordInput(){
     </div>
   );
 }
-
 export default PasswordInput;

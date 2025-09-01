@@ -1,6 +1,6 @@
-import CameraIcon from "../../CameraIcon";
-import EmailInput from "../Register/EmailInput";
-import PasswordInput from "../Register/PasswordInput";
+import CameraIcon from "../../components/CameraIcon";
+import EmailInput from "../../components/AuthInputs/EmailInput";
+import PasswordInput from "../../components/AuthInputs/PasswordInput";
 import LoginPageCard from "./LoginPageCard";
 
 function LoginPage() {

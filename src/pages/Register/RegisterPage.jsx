@@ -1,8 +1,9 @@
-import CameraIcon from "../../CameraIcon";
-import PasswordInput from "./PasswordInput";
-import PhoneNumberInput from "./PhoneNumberInput";
+import CameraIcon from "../../components/CameraIcon";
+import PasswordInput from "../../components/AuthInputs/PasswordInput";
+import PhoneNumberInput from "../../components/AuthInputs/PhoneNumberInput";
 import RegisterPageCard from "./RegisterPageCard";
-import EmailInput from "./EmailInput";
+import EmailInput from "../../components/AuthInputs/EmailInput";
+import NameInput from "../../components/AuthInputs/NameInput";
 import { Link } from "react-router-dom";
 
 function RegisterPage(){
@@ -23,8 +24,8 @@ function RegisterPage(){
                     <div className="mt-5">
 
                         <div className="flex gap-4">
-                            <input type="text" placeholder="First Name" className="border border-gray-300 text-xl p-3 rounded-md w-full mb-5 hover:bg-gray-100" />
-                            <input type="text" placeholder="Second Name" className="border border-gray-300 text-xl p-3 rounded-md w-full mb-5 hover:bg-gray-100" />  
+                                <NameInput placeholder="First Name" />
+                                <NameInput placeholder="Second Name" />
                         </div>
 
                         <EmailInput />
