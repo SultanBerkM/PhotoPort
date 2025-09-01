@@ -1,12 +1,12 @@
-# React + Vite
+Photo Port
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PhotoPort is a platform that offers unique opportunities for ambitious photographers to grow in the fields of cinematography and photography.
 
-Currently, two official plugins are available:
+The main goal of the project is to create a universal environment where both professional and amateur photographers can showcase their creativity and offer paid services to clients.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application features a virtual portfolio containing the photographer's best captured shots and past photo sessions, along with their schedule and available dates for accepting new bookings.
 
-## Expanding the ESLint configuration
+On the other hand, users will be able to send inquiries and book their preferred photographer, who can then review and decide which requests best match their availability and capabilities.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The platform ensures the secure exchange of photo and video materials without compromising on quality or file size
+
