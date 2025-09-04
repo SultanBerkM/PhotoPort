@@ -1,12 +1,47 @@
-function StatisticsCards({ pathData, cardTitle, numberData }) {
+import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
+
+function StatisticsCards({ pathData, cardTitle, numberData, index }) {
   return (
-    <div className="border-2 rounded-2xl w-full sm:w-[48%] lg:w-[22%] h-auto m-4 p-5 flex flex-col items-start justify-center gap-5 border-gray-400 shadow-sm">
-      <svg xmlns="http://www.w3.org/2000/svg" height="45px" viewBox="0 -960 960 960" width="45px" fill="#4D4D4D">
-        <path d={pathData} />
-      </svg>
-      <h1 className="text-2xl xl:text-4xl">{cardTitle}</h1>
-      <h2 className="text-4xl xl:text-6xl text-blue-500">{numberData}</h2>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: -30, filter: "blur(5px)" }}
+      animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.8, delay: 0.2 * index}}
+      whileHover={{ scale: 1.03 }}
+      className="w-full sm:w-[48%] lg:w-[22%] bg-white rounded-3xl shadow-xl border border-gray-200 
+                 hover:shadow-2xl transition-all duration-300 p-6 flex flex-col gap-4 
+                 items-start justify-center"
+    >
+      <div className="bg-blue-100 p-3 rounded-xl">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="40px"
+          width="40px"
+          viewBox="0 -960 960 960"
+          fill="#3B82F6"
+        >
+          <path d={pathData} />
+        </svg>
+      </div>
+
+      <motion.h1
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 + index * 0.1 }}
+        className="text-gray-700 text-xl font-semibold tracking-wide"
+      >
+        {cardTitle}
+      </motion.h1>
+
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 + index * 0.1 }}
+        className="text-4xl xl:text-5xl font-bold text-blue-600"
+      >
+        <CountUp end={numberData} duration={5} decimals={Number.isInteger(numberData) ? 0 : 1} />
+      </motion.h2>
+    </motion.div>
   );
 }
 
