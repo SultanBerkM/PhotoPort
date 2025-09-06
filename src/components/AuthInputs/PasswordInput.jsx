@@ -12,11 +12,22 @@ function PasswordInput(){
     }
   
     const validatePassword = (value) => {
-        if(value == "") { return ""; }
-        if(value.length < 8) { return "Password must be at least 8 characters"}
-        else if(!/[A-Z]/.test(value)) {return "Password must contain at least one uppercase letter"}
-        else if(!/[0-9]/.test(value)) {return "Password must contain at least one number"}
-        else {return ""}
+      if(value == "") { 
+        return "";
+      }
+      if(value.length < 8) { 
+        return "Password must be at least 8 characters"
+      }
+      else if(!/[A-Z]/.test(value)) {
+        return "Password must contain at least one uppercase letter"
+      }
+      else if(!/[0-9]/.test(value)) {
+        return "Password must contain at least one number"
+      }
+      else {
+        return ""
+      }
+      //add more security rules if needed
     }
 
    return (

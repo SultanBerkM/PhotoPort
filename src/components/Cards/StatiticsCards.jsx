@@ -39,7 +39,8 @@ function StatisticsCards({ pathData, cardTitle, numberData, index }) {
         transition={{ delay: 0.6 + index * 0.1 }}
         className="text-4xl xl:text-5xl font-bold text-blue-600"
       >
-        <CountUp end={numberData} duration={5} decimals={Number.isInteger(numberData) ? 0 : 1} />
+        <CountUp end={numberData} duration={3}
+        decimals={Number.isInteger(numberData) ? 0 : 1} />
       </motion.h2>
     </motion.div>
   );

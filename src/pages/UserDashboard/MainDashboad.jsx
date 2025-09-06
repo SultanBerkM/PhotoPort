@@ -1,6 +1,7 @@
 import UploadBtn from "../../components/Buttons/UploadBtn";
 import StatisticsCards from "../../components/Cards/StatiticsCards";
 import SlidebarGallery from "../../components/Cards/SlidebarGallery";
+import Bookings from "../../components/Cards/Bookings";
 function MainDashboard(){
     const user = "Caliman";
     return(
@@ -26,7 +27,10 @@ function MainDashboard(){
             <div className="w-full mt-10 mb-10 overflow-hidden">
                 <SlidebarGallery />
             </div>
-        </div>  
+
+            <h2 className="text-3xl font-semibold text-gray-800 m-5">Upcoming Bookings</h2>
+            <Bookings />
+        </div>
     );
 }
 export default MainDashboard;
