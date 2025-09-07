@@ -1,30 +1,63 @@
 function Bookings() {
   const headers = [
-    { id: 1, key: "DATE",   label: "Date"   },
+    { id: 1, key: "DATE", label: "Date" },
     { id: 2, key: "CLIENT", label: "Client" },
-    { id: 3, key: "TYPE",   label: "Type"   },
+    { id: 3, key: "TYPE", label: "Type" },
     { id: 4, key: "STATUS", label: "Status" },
   ];
 
   const bookingsData = [
-    { id: 1, date: "2024-09-15", client: "John Doe",     type: "Wedding",     status: "Confirmed" },
-    { id: 2, date: "2024-09-16", client: "Jane Smith",   type: "Corporate",   status: "Pending"   },
-    { id: 3, date: "2024-09-17", client: "Alice Johnson",type: "Engagement",  status: "Confirmed" },
-    { id: 4, date: "2024-09-18", client: "Bob Brown",    type: "Birthday",    status: "Pending"   },
-    { id: 5, date: "2024-09-19", client: "Charlie Davis",type: "Anniversary", status: "Confirmed" },
+    {
+      id: 1,
+      date: "2024-09-15",
+      client: "John Doe",
+      type: "Wedding",
+      status: "Confirmed",
+    },
+    {
+      id: 2,
+      date: "2024-09-16",
+      client: "Jane Smith",
+      type: "Corporate",
+      status: "Pending",
+    },
+    {
+      id: 3,
+      date: "2024-09-17",
+      client: "Alice Johnson",
+      type: "Engagement",
+      status: "Confirmed",
+    },
+    {
+      id: 4,
+      date: "2024-09-18",
+      client: "Bob Brown",
+      type: "Birthday",
+      status: "Pending",
+    },
+    {
+      id: 5,
+      date: "2024-09-19",
+      client: "Charlie Davis",
+      type: "Anniversary",
+      status: "Confirmed",
+    },
   ];
 
   // helpers
   const StatusBadge = ({ value }) => {
     const v = (value || "").toLowerCase();
-    const styles = {
-      confirmed: "bg-emerald-100 text-emerald-700",
-      pending:   "bg-amber-100 text-amber-700",
-      cancelled: "bg-rose-100 text-rose-700",
-      completed: "bg-zinc-100 text-zinc-700",
-    }[v] || "bg-zinc-100 text-zinc-700";
+    const styles =
+      {
+        confirmed: "bg-emerald-100 text-emerald-700",
+        pending: "bg-amber-100 text-amber-700",
+        cancelled: "bg-rose-100 text-rose-700",
+        completed: "bg-zinc-100 text-zinc-700",
+      }[v] || "bg-zinc-100 text-zinc-700";
     return (
-      <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs ${styles}`}>
+      <span
+        className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs ${styles}`}
+      >
         {value}
       </span>
     );
@@ -32,7 +65,13 @@ function Bookings() {
 
   const formatDate = (iso) => {
     const d = new Date(iso);
-    return isNaN(d) ? iso : d.toLocaleDateString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit" });
+    return isNaN(d)
+      ? iso
+      : d.toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        });
   };
 
   return (
@@ -42,7 +81,8 @@ function Bookings() {
           <tr>
             {headers.map((header) => {
               const accessor = header.key.toLowerCase();
-              const hideOnSm = accessor === "type" ? "hidden sm:table-cell" : "";
+              const hideOnSm =
+                accessor === "type" ? "hidden sm:table-cell" : "";
               return (
                 <th
                   key={header.id}
@@ -60,7 +100,8 @@ function Bookings() {
             <tr key={row.id} className="hover:bg-zinc-50/70 transition-colors">
               {headers.map((header) => {
                 const accessor = header.key.toLowerCase();
-                const hideOnSm = accessor === "type" ? "hidden sm:table-cell" : "";
+                const hideOnSm =
+                  accessor === "type" ? "hidden sm:table-cell" : "";
 
                 let content = row[accessor];
 
@@ -77,7 +118,10 @@ function Bookings() {
                 }
 
                 return (
-                  <td key={header.id} className={`px-4 py-3 whitespace-nowrap align-middle ${hideOnSm}`}>
+                  <td
+                    key={header.id}
+                    className={`px-4 py-3 whitespace-nowrap align-middle ${hideOnSm}`}
+                  >
                     {content ?? "—"}
                   </td>
                 );

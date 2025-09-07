@@ -1,8 +1,8 @@
 import CameraIcon from "../../components/CameraIcon";
 import EmailInput from "../../components/AuthInputs/EmailInput";
 import PasswordInput from "../../components/AuthInputs/PasswordInput";
-import LoginPageCard from "./LoginPageCard";
-import AuthBtn from "../../components/Buttons/AuthBtn";
+import LoginPageCard from "../../components/Cards/LoginPageCard";
+import LoginRegisterButton from "../../components/Buttons/LoginRegisterButton";
 function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex items-center justify-center p-4">
@@ -22,7 +22,7 @@ function LoginPage() {
             <EmailInput />
             <PasswordInput />
           </div>
-          <AuthBtn btnName="Login" />
+          <LoginRegisterButton btnName="Login" />
           <p className="text-gray-700 text-xl mt-4 text-center">
             Don't have an account?
           </p>

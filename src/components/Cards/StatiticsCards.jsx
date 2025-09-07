@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion';
-import CountUp from 'react-countup';
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 function StatisticsCards({ pathData, cardTitle, numberData, index }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -30, filter: "blur(5px)" }}
       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.8, delay: 0.2 * index}}
+      transition={{ duration: 0.8, delay: 0.2 * index }}
       whileHover={{ scale: 1.03 }}
       className="w-full sm:w-[48%] lg:w-[22%] bg-white rounded-3xl shadow-xl border border-gray-200 
                  hover:shadow-2xl transition-all duration-300 p-6 flex flex-col gap-4 
@@ -39,8 +39,11 @@ function StatisticsCards({ pathData, cardTitle, numberData, index }) {
         transition={{ delay: 0.6 + index * 0.1 }}
         className="text-4xl xl:text-5xl font-bold text-blue-600"
       >
-        <CountUp end={numberData} duration={3}
-        decimals={Number.isInteger(numberData) ? 0 : 1} />
+        <CountUp
+          end={numberData}
+          duration={3}
+          decimals={Number.isInteger(numberData) ? 0 : 1}
+        />
       </motion.h2>
     </motion.div>
   );

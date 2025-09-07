@@ -9,4 +9,3 @@ The application features a virtual portfolio containing the photographer's best 
 On the other hand, users will be able to send inquiries and book their preferred photographer, who can then review and decide which requests best match their availability and capabilities.
 
 The platform ensures the secure exchange of photo and video materials without compromising on quality or file size
-

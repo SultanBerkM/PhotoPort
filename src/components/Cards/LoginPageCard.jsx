@@ -3,7 +3,7 @@ function LoginPageCard() {
     <div className="h-full flex items-center justify-center">
       <div className="relative">
         <img
-          src="./authJpgs/photoLog.jpg"
+          src="./LoginRegisterCardImages/photoLog.jpg"
           alt="Register"
           className="h-[600px] w-max object-cover rounded-l-lg rounded-r-none shadow-lg"
         />
@@ -12,8 +12,7 @@ function LoginPageCard() {
             Already part of the PhotoPort family?
           </h2>
           <p className="text-white md:text-xl mt-2 drop-shadow-lg text-center">
-            Let’s turn inspiration into impact.
-            Time to capture more.
+            Let’s turn inspiration into impact. Time to capture more.
           </p>
         </div>
       </div>

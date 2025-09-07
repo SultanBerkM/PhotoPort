@@ -1,36 +1,33 @@
-import { useState } from 'react';
-function PasswordInput(){
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+import { useState } from "react";
+function PasswordInput() {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-    const handleChange = (e) => {
-      setPassword(e.target.value);
-    }
+  const handleChange = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const handleBlur = () => {
-      setError(validatePassword(password));
-    }
-  
-    const validatePassword = (value) => {
-      if(value == "") { 
-        return "";
-      }
-      if(value.length < 8) { 
-        return "Password must be at least 8 characters"
-      }
-      else if(!/[A-Z]/.test(value)) {
-        return "Password must contain at least one uppercase letter"
-      }
-      else if(!/[0-9]/.test(value)) {
-        return "Password must contain at least one number"
-      }
-      else {
-        return ""
-      }
-      //add more security rules if needed
-    }
+  const handleBlur = () => {
+    setError(validatePassword(password));
+  };
 
-   return (
+  const validatePassword = (value) => {
+    if (value == "") {
+      return "";
+    }
+    if (value.length < 8) {
+      return "Password must be at least 8 characters";
+    } else if (!/[A-Z]/.test(value)) {
+      return "Password must contain at least one uppercase letter";
+    } else if (!/[0-9]/.test(value)) {
+      return "Password must contain at least one number";
+    } else {
+      return "";
+    }
+    //add more security rules if needed
+  };
+
+  return (
     <div className="relative w-full mb-4">
       <input
         type="password"

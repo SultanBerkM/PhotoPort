@@ -21,21 +21,11 @@ function Arrow({ className, style, onClick, direction }) {
 }
 
 function SlidebarGallery() {
-  const images = [
-    "/dashboardPhots/img12.JPG",
-    "/dashboardPhots/img2.JPG",
-    "/dashboardPhots/img8.JPG",
-    "/dashboardPhots/img7.JPG",
-    "/dashboardPhots/img11.JPG",
-    "/dashboardPhots/img1.JPG",
-    "/dashboardPhots/img6.JPG",
-    "/dashboardPhots/img10.JPG",
-    "/dashboardPhots/img9.JPG",
-    "/dashboardPhots/img3.JPG",
-    "/dashboardPhots/img4.JPG",
-    "/dashboardPhots/img5.JPG",
-  ];
-
+  const galleryImagesPath = "/userGallery/";
+  const gallery = [];
+  for (let i = 1; i <= 12; i++) {
+    gallery.push(`${galleryImagesPath}img${i}.JPG`);
+  }
   const settings = {
     dots: false,
     infinite: true,
@@ -53,8 +43,24 @@ function SlidebarGallery() {
       { breakpoint: 1536, settings: { slidesToShow: 5, slidesToScroll: 3 } },
       { breakpoint: 1280, settings: { slidesToShow: 4, slidesToScroll: 2 } },
       { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 2 } },
-      { breakpoint: 768,  settings: { slidesToShow: 2, slidesToScroll: 1, arrows: false, dots: true } },
-      { breakpoint: 480,  settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false, dots: true } },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
     ],
   };
 
@@ -63,7 +69,7 @@ function SlidebarGallery() {
       {...settings}
       className="w-full overflow-x-hidden max-w-screen-2xl mx-auto px-4"
     >
-      {images.map((image, index) => (
+      {gallery.map((image, index) => (
         <div key={index} className="px-2">
           <img
             src={image}

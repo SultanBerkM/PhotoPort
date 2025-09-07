@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
@@ -9,7 +9,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 
 function App() {
-  return ( 
+  return (
     <Router>
       <Routes>
         <Route path="/dashboard" element={<UserDashboard />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

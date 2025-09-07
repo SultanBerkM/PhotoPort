@@ -1,4 +1,4 @@
-import Sidebar from "../../components/Navigation/Sidebar";   
+import Sidebar from "../../components/Navigation/Sidebar";
 import Navbar from "../../components/Navigation/Navbar";
 import MainDashboard from "./MainDashboad";
 function UserDashboard() {
