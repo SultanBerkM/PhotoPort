@@ -1,5 +1,5 @@
 function Navbar() {
-  const user = "Caliman";
+  const user = "John Doe";
   return (
     <div className="flex justify-between items-center p-5 h-17 border-none rounded-2xl m-2 bg-white shadow-md">
       <h1 className="text-3xl font-semibold">{user}'s Dashboard</h1>

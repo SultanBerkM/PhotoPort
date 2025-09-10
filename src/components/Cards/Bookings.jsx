@@ -74,8 +74,12 @@ function Bookings() {
         });
   };
 
+  const only3 = typeof window !== "undefined" &&
+                window.matchMedia(" (max-height:1080px)").matches;
+  const rows = only3 ? bookingsData.slice(0, 3) : bookingsData;
+
   return (
-    <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-sm m-10">
+      <div className="overflow-x-auto w-1/2 rounded-2xl border border-zinc-200 bg-white shadow-sm m-5">
       <table className="w-full min-w-[720px] text-sm">
         <thead className="bg-zinc-50/80 sticky top-0 z-10">
           <tr>
@@ -95,8 +99,9 @@ function Bookings() {
           </tr>
         </thead>
 
+            
         <tbody className="divide-y divide-zinc-100">
-          {bookingsData.map((row) => (
+          {rows.map((row) => (
             <tr key={row.id} className="hover:bg-zinc-50/70 transition-colors">
               {headers.map((header) => {
                 const accessor = header.key.toLowerCase();

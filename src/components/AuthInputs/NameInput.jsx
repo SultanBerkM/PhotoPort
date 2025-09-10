@@ -5,7 +5,6 @@ function NameInput({ placeholder }) {
 
   const handleChange = (e) => {
     setName(e.target.value);
-    //setError(validateNames(e.target.value))
   };
   const handleBlur = () => {
     setError(validateNames(name));

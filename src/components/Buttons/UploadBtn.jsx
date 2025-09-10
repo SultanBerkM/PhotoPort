@@ -2,7 +2,7 @@ function UploadBtn() {
   return (
     <button
       className="flex items-center justify-center px-6 py-3 gap-2 
-                                    bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
+                                  bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700
                                   text-white font-bold text-xl rounded-lg shadow-lg hover:shadow-xl transform transition-transform duration-200 hover:cursor-pointer hover:scale-105 active:scale-95"
     >
       <svg

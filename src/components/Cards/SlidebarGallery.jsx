@@ -67,7 +67,7 @@ function SlidebarGallery() {
   return (
     <Slider
       {...settings}
-      className="w-full overflow-x-hidden max-w-screen-2xl mx-auto px-4"
+      className="w-full overflow-x-hidden max-w-screen-2xl px-4"
     >
       {gallery.map((image, index) => (
         <div key={index} className="px-2">
