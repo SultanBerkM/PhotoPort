@@ -2,6 +2,8 @@ import UploadBtn from "../../components/Buttons/UploadBtn";
 import StatisticsCards from "../../components/Cards/StatiticsCards";
 import SlidebarGallery from "../../components/Cards/SlidebarGallery";
 import Bookings from "../../components/Cards/Bookings";
+import ActivityCard from "../../components/Cards/ActivityCard";
+import EarningsCard from "../../components/Cards/EarningsCard";
 function MainDashboard() {
   const user = "Caliman";
   const data = {
@@ -30,6 +32,14 @@ function MainDashboard() {
     title: "New Messages"
   },
 };
+  const activities = [
+    { type: "upload", data: { count: 5 } },
+    { type: "booking", data: { client: "Jane Smith" } },
+    { type: "review", data: { client: "Alice Johnson" } },
+    { type: "message", data: { client: "Bob Brown" } },
+    { type: "rating", data: { value: 4.8 } }
+  ]
+
   return (
     <div className="bg-white rounded-2xl m-2 shadow-md h-full overflow-hidden max-w-[100vw]">
       <div className="flex h-1/12 items-baseline p-5 gap-10 justify-center">
@@ -75,14 +85,20 @@ function MainDashboard() {
         />
       </div>
 
-      <div className="flex justify-around w-full gap-20">
-       <div className=" mt-10 mb-10 overflow-hidden">
+      <div className="flex gap-25">
+       <div className="mt-10 mb-10 overflow-hidden">
+
           <h2 className="text-2xl font-semibold text-gray-800 m-5">Recent Uploads</h2>
           <SlidebarGallery />
+
           <h2 className="text-2xl font-semibold text-gray-800 m-5">Upcoming Bookings</h2>
-          <Bookings />
+          <div className= "flex">
+            <Bookings />
+            <EarningsCard money={2543.50}/>
+          </div>
+          
         </div>
-        <div className="w-1/4 rounded-2xl border border-zinc-200 bg-white shadow-sm m-5"> </div>
+        <ActivityCard activities={activities} />
       </div>
       
     </div>
