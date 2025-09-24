@@ -4,6 +4,7 @@ import SlidebarGallery from "../../components/Cards/SlidebarGallery";
 import Bookings from "../../components/Cards/Bookings";
 import ActivityCard from "../../components/Cards/ActivityCard";
 import EarningsCard from "../../components/Cards/EarningsCard";
+import ToDoList from "../../components/Cards/ToDoList";
 function MainDashboard() {
   const user = "Caliman";
   const data = {
@@ -37,12 +38,15 @@ function MainDashboard() {
     { type: "booking", data: { client: "Jane Smith" } },
     { type: "review", data: { client: "Alice Johnson" } },
     { type: "message", data: { client: "Bob Brown" } },
-    { type: "rating", data: { value: 4.8 } }
+    { type: "rating", data: { value: 4.8 } },
+    { type: "booking", data: { client: "Atila Chakarov" } },
+    { type: "review", data: { client: "Lil Peep" } },
+    { type: "upload", data: { count: 3 } }
   ]
 
   return (
     <div className="bg-white rounded-2xl m-2 shadow-md h-full overflow-hidden max-w-[100vw]">
-      <div className="flex h-1/12 items-baseline p-5 gap-10 justify-center">
+      <div className="flex p-2 items-baseline gap-10 justify-center border-b-2 border-gray-300">
         <h2 className="p-5 text-3xl font-medium text-gray-800 tracking-tight">
           Welcome back,{" "}
           <span className="font-semibold text-blue-600">{user}</span>, ready to
@@ -52,7 +56,7 @@ function MainDashboard() {
           <UploadBtn />
         </div>
       </div>
-      <hr className="border-gray-300 border-1 mt-4" />
+      
       <div className="flex flex-wrap justify-around items-stretch w-full gap mt-7">
         <StatisticsCards
           cardTitle={data.uploads.title}
@@ -85,20 +89,21 @@ function MainDashboard() {
         />
       </div>
 
-      <div className="flex gap-25">
-       <div className="mt-10 mb-10 overflow-hidden">
-
-          <h2 className="text-2xl font-semibold text-gray-800 m-5">Recent Uploads</h2>
+      
+      {/* this part makes the most problems with the responsive design especially the Slider */}
+      <div className="flex items-baseline gap-25 mt-10">
+        <div>
+          <h2 className="text-2xl font-semibold text-gray-800 mt-5 ml-5 mb-5">Recent Uploads</h2>  
           <SlidebarGallery />
-
-          <h2 className="text-2xl font-semibold text-gray-800 m-5">Upcoming Bookings</h2>
-          <div className= "flex">
-            <Bookings />
-            <EarningsCard money={2543.50}/>
-          </div>
-          
         </div>
         <ActivityCard activities={activities} />
+      </div>
+      
+      <h2 className="text-2xl font-semibold text-gray-800   ml-5 mb-5">Upcoming Bookings</h2>
+      <div className="flex justify-around">
+        <Bookings/>
+        <EarningsCard money={2543.50}/>
+        <ToDoList />
       </div>
       
     </div>

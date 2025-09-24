@@ -11,7 +11,7 @@ function StatisticsCards({ pathData, cardTitle, numberData, index, series = [] }
       animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
       transition={{ duration: 0.8, delay: 0.15 * index }}
       whileHover={{ scale: 1.03 }}
-      className="w-full sm:w-[48%] lg:w-[22%] bg-white rounded-3xl shadow-xl border border-gray-200 
+      className="w-full sm:w-[48%] lg:w-[22%] bg-white rounded-3xl shadow-xl border-1 border-gray-200 
                  hover:shadow-2xl transition-all duration-300 p-6 flex flex-col gap-4 
                  items-start justify-center"
     >

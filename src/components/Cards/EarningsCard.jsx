@@ -4,7 +4,7 @@ function EarningsCard({ money }) {
   const series = [100, 250, 150, 300, 200, 400, 350, 500, 450, 600, 550, 700];
 
   return (
-    <div className="w-1/2 rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 shadow-lg p-6 flex flex-col justify-between">
+    <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 shadow-lg p-6 flex flex-col justify-between w-2/10">
         <div className="flex justify-between items-center">
             <h2 className="text-lg font-semibold text-gray-700">Earnings</h2>
             <span className="text-xs font-medium px-2 py-1 bg-green-100 text-green-700 rounded-full">+8.4% vs last month</span>

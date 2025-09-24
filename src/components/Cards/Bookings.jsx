@@ -79,7 +79,7 @@ function Bookings() {
   const rows = only3 ? bookingsData.slice(0, 3) : bookingsData;
 
   return (
-      <div className="overflow-x-auto w-1/2 rounded-2xl border border-zinc-200 bg-white shadow-sm mx-5">
+      <div className="overflow-x-auto rounded-2xl border border-zinc-200 bg-white shadow-sm w-4/10">
       <table className="w-full min-w-[720px] text-sm">
         <thead className="bg-zinc-50/80 sticky top-0 z-10">
           <tr>

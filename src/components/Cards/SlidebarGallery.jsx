@@ -27,47 +27,34 @@ function SlidebarGallery() {
     gallery.push(`${galleryImagesPath}img${i}.JPG`);
   }
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 4,
-    arrows: true,
-    centerMode: false,
-    draggable: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    nextArrow: <Arrow direction="next" />,
-    prevArrow: <Arrow direction="prev" />,
-    responsive: [
-      { breakpoint: 1536, settings: { slidesToShow: 5, slidesToScroll: 3 } },
-      { breakpoint: 1280, settings: { slidesToShow: 4, slidesToScroll: 2 } },
-      { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 2 } },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-        },
-      },
-    ],
-  };
+  mobileFirst: true,            // <-- ВАЖНО: прави breakpoint-ите = min-width
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,              // базово (телефон)
+  slidesToScroll: 2,
+  arrows: true,
+  centerMode: false,
+  draggable: true,
+  autoplay: true,
+  adaptiveHeight: false,
+  autoplaySpeed: 5000,
+  nextArrow: <Arrow direction="next" />,
+  prevArrow: <Arrow direction="prev" />,
+  responsive: [
+    { breakpoint: 480,  settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false, dots: true } }, // ≥480
+    { breakpoint: 768,  settings: { slidesToShow: 2, slidesToScroll: 1, arrows: false, dots: true } }, // ≥768
+    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },                             // ≥1024
+    { breakpoint: 1280, settings: { slidesToShow: 4, slidesToScroll: 2 } },                             // ≥1280
+    { breakpoint: 1536, settings: { slidesToShow: 5, slidesToScroll: 3 } },                             // ≥1536
+    { breakpoint: 1920, settings: { slidesToShow: 5, slidesToScroll: 3 } },                             // ≥1920
+  ],
+};
 
   return (
     <Slider
       {...settings}
-      className="w-full overflow-x-hidden max-w-screen-2xl px-4"
+      className="w-full h-auto overflow-x-hidden max-w-screen-2xl px-4"
     >
       {gallery.map((image, index) => (
         <div key={index} className="px-2">

@@ -28,30 +28,33 @@ function ActivityCard({ activities }) {
     rating: (data) => ({
       icon: <FaSun className="text-orange-500" />,
       text: `You received a new rating: ${data.value}`,
-    }),
+    })
   };
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white shadow-md p-6 mt-5 h-1/4 w-1/4">
+    <div className="rounded-2xl border border-gray-200 bg-white shadow-md p-6 w-3/12">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Activity</h2>
-      <ul className="space-y-3">
-        {activities.map((activity, i) => {
-          const template = templates[activity.type];
-          const item = template
-            ? template(activity.data)
-            : { icon: <FaSun className="text-gray-400" />, text: "Unknown activity" };
+      <div className="overflow-y-auto h-60 bg-gray-100 p-2 rounded-lg">
+        <ul className="space-y-3">
+          {activities.map((activity, i) => {
+            const template = templates[activity.type];
+            const item = template
+              ? template(activity.data)
+              : { icon: <FaSun className="text-gray-400" />, text: "Unknown activity" };
 
-          return (
-            <li
-              key={i}
-              className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-gray-100 transition"
-            >
-              <span className="text-lg">{item.icon}</span>
-              <span className="text-gray-700">{item.text}</span>
-            </li>
-          );
-        })}
-      </ul>
+            return (
+              <li
+                key={i}
+                className="flex items-center gap-3 p-3 rounded-lg border border-gray-100 bg-white hover:bg-gray-300 hover:cursor-pointer transition"
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="text-gray-700">{item.text}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      
     </div>
   );
 }
