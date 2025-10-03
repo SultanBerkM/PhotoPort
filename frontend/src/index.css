@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "react-phone-number-input/style.css";
+
+.slick-list,
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide > div {
+  height: 100%;
+}
