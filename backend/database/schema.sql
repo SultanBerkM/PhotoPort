@@ -90,31 +90,3 @@ rating NUMERIC(2,1) CHECK (rating >= 0 AND rating <= 5) NOT NULL,
 review_text VARCHAR(1500),
 is_visible BOOLEAN DEFAULT TRUE
 )
-
-
-SELECT * FROM users u
-JOIN photographers ph ON ph.user_id = u.USER_ID 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
